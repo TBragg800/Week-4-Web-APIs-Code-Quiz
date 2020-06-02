@@ -8,17 +8,55 @@ var nextBtn = document.getElementById("next-btn");
 var buttonShow = document.getElementById("buttons");
 var showScore = document.getElementById("score/time-btns");
 var score = 0;
+var randomQues;
+var CurrentQues;
+var randomAnswer;
+var questionEl = document.getElementById("question");
+var buttonEl1 = document.getElementById("btn1");
+var buttonEl2 = document.getElementById("btn2");
+var buttonEl3 = document.getElementById("btn3");
+var buttonEl4 = document.getElementById("btn4");
+var userChoices = document.getElementById("buttons");
 
 start1.addEventListener("click", startQuiz);
 
- var questionsArray = [
+
+function startQuiz() {
+    start1.classList.add("d-none");
+    buttonShow.classList.remove("d-none");
+    showScore.classList.remove("d-none");
+    randomQues = questionsArray.sort(() => Math.random() - .5);
+    CurrentQues = 0;
+    nextQuestion();
+}
+
+function nextQuestion() {
+showNextQuestion(randomQues[CurrentQues])
+showNextButtons(CurrentQues)
+}
+
+function showNextQuestion (question) {
+    questionEl.innerText = question.question;
+
+}
+
+function showNextButtons (answers) {
+    buttonEl1.innerHTML = answers
+
+}
+
+function selectAnswer() {
+
+}
+
+var questionsArray = [
     {
         question: "What is 2 + 2", 
         answers: [
-          { text: "4", correct: true},
-          { text: "22", correct: false},
-          { text: "45", correct: false},
-          { text: "451", correct: false}
+            { text: "4", correct: false},
+            { text: "22", correct: false},
+            { text: "45", correct: false},
+            { text: "451", correct: false}
         ]
     },
     {
@@ -70,18 +108,8 @@ start1.addEventListener("click", startQuiz);
 
 ]
 
-function startQuiz() {
-    start1.classList.add("d-none");
-    buttonShow.classList.remove("d-none");
-    showScore.classList.remove("d-none");
-    // for (var i = 0; i < questionsArray.length; i++) {
-    //     var response = questionsArray[i];
-    //     if (response === questionsArray[i, true]) {
-    //         score++;
-    //         alert("Correct!");
-    //     } else {
-    //         alert("wrong!");
-    //     }
-    // }
-    console.log("clicked!");
-}
+
+
+// function() 
+//     { questionsArray.sort(Math.random() - .5);
+//     }
