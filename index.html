@@ -3,19 +3,37 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css2?family=Righteous&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
 
     <title>Code Quiz</title>
 </head>
-<body>
+<body class="d-flex justify-content-center align-items-center">
     <!-- needs div to hold test -->
     <!-- div to hold question -->
     <!-- needs div to hold possible choices -->
     <!-- needs div for control buttons and start button -->
     <!-- timer clock that begins after start -->
     <!-- place to save initals and score -->
+    <main class="container mt-1 mb-1">
+        <section id="question-area" class="hide">
+            <div id="question" class="d-flex justify-content-center">Coding Quiz:</div>
+                <div id="buttons" class="row myButtons d-flex justify-content-center">
+                <button type="button" class="row btn btn-secondary btn-lg m-4">Multipule Choice 1</button>
+                <button type="button" class="row btn btn-secondary btn-lg m-4">Multipule Choice 2</button>
+                <button type="button" class="row btn btn-secondary btn-lg m-4">Multipule Choice 3</button>
+                <button type="button" class="row btn btn-secondary btn-lg m-4">Multipule Choice 4</button>
+            </div>
+            
+        </section>
+        
+        <section class="controls d-flex justify-content-center m-2">
+            <button id="start-btn" type="button" class="btn btn-primary btn-lg pt-4 pb-4 pl-5 pr-5 m-2">Start</button>
+            <button type="next-btn" class="btn btn-primary btn-lg pt-4 pb-4 pl-5 pr-5 m-2 d-none">Next</button>
 
-
+        </section>
+    </main>
 
     <script src="script.js"></script>
 </body>

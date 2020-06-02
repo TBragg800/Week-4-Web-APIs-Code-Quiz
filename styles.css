@@ -4,3 +4,38 @@
 /* stacked buttons */
 /* button hover pseudo class */
 /* style to hide buttons */
+
+/* I adopted this from the week 3 homework so that the width and heigth are easy to style 
+I also added a different font from google fonts to personalize all text.*/
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  font-family: 'Righteous', cursive;
+}
+
+/* This styles the body giving it a textured background and specific colorscheme. The heigth and
+and width have been  */
+body {
+    background-image: url("https://www.transparenttextures.com/patterns/brick-wall.png");
+    background-color: #303e75;
+    height: 130vh;
+    padding: 0;
+    margin: 0;
+    width: 100vw;
+}
+
+.container {
+    box-shadow: 0 0 10px 2px;
+    background-color: white;
+    border-radius: 3px;
+    max-width: 70%;
+    padding: 20px;
+    width: 700px;
+}
+
+
+.myButtons {
+    display: block;
+}
+
