@@ -12,6 +12,7 @@ I also added a different font from google fonts to personalize all text.*/
 *::after {
   box-sizing: border-box;
   font-family: 'Righteous', cursive;
+  font-size: 18px;
 }
 
 /* This styles the body giving it a textured background and specific colorscheme. The heigth and
@@ -35,7 +36,8 @@ body {
 }
 
 
-.myButtons {
+.myButtongroup {
     display: block;
 }
+
 

@@ -17,22 +17,30 @@
     <!-- timer clock that begins after start -->
     <!-- place to save initals and score -->
     <main class="container mt-1 mb-1">
-        <section id="question-area" class="hide">
+        
+        <section id="question-area">
             <div id="question" class="d-flex justify-content-center">Coding Quiz:</div>
-                <div id="buttons" class="row myButtons d-flex justify-content-center">
-                <button type="button" class="row btn btn-secondary btn-lg m-4">Multipule Choice 1</button>
-                <button type="button" class="row btn btn-secondary btn-lg m-4">Multipule Choice 2</button>
-                <button type="button" class="row btn btn-secondary btn-lg m-4">Multipule Choice 3</button>
-                <button type="button" class="row btn btn-secondary btn-lg m-4">Multipule Choice 4</button>
+            <div id="buttons" class="row myButtongroup d-none text-center">
+                    <button type="button" class="row btn btn-secondary btn-lg m-4">Multipule Choice 1</button>
+                    <button type="button" class="row btn btn-secondary btn-lg m-4">Multipule Choice 2</button>
+                    <button type="button" class="row btn btn-secondary btn-lg m-4">Multipule Choice 3</button>
+                    <button type="button" class="row btn btn-secondary btn-lg m-4">Multipule Choice 4</button>
             </div>
-            
         </section>
         
         <section class="controls d-flex justify-content-center m-2">
             <button id="start-btn" type="button" class="btn btn-primary btn-lg pt-4 pb-4 pl-5 pr-5 m-2">Start</button>
-            <button type="next-btn" class="btn btn-primary btn-lg pt-4 pb-4 pl-5 pr-5 m-2 d-none">Next</button>
-
+            <button id="next-btn" class="btn btn-primary btn-lg pt-4 pb-4 pl-5 pr-5 m-2 d-none">Next</button>
         </section>
+
+        <section>
+            <div id="score/time-btns" class="row ml-2 mr-2 score d-none justify-content-between">
+                <p>Score: <span>1234</span></p>
+                <p>Seconds Left: <span>1234</span></p>
+            </div>
+        </section>
+
+
     </main>
 
     <script src="script.js"></script>
