@@ -34,4 +34,6 @@ This assignment contains a timed multiple choice code quiz. The quiz runs in the
 ### Code Validator
 * Code validation by W3C for HTML and CSS
 
+#### Screenshot of deployed application
+
 ![](images/CodeQuiz.png)
