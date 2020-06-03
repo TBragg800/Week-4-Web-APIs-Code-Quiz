@@ -11,13 +11,16 @@ var score = 0;
 var randomQues;
 var CurrentQues;
 var questionEl = document.getElementById("question");
+document.getElementById("myScore").append(score);
+var totalSeconds = 60;
+var cSeconds = parseInt(totalSeconds%60);
 
 
 start1.addEventListener("click", startQuiz);
 nextBtn.addEventListener("click", () => {
     CurrentQues++;
-    NextQuestion()
-})
+    NextQuestion();
+});
 
 function startQuiz() {
     start1.classList.add("d-none");
@@ -28,9 +31,21 @@ function startQuiz() {
     NextQuestion();
 }
 
+function checkTime() {
+    document.getElementById("quiz-time-left").innerHTML = cSeconds;
+    if (totalSeconds <= 0) {
+        setTimeout("document.quiz.submit()", 1);
+    } else {
+        totalSeconds = totalSeconds - 1;
+        cSeconds = parseInt(totalSeconds%60);
+        setTimeout("checkTime()", 1000);
+    } 
+}
+setTimeout("checkTime()", 1000);
+
 function NextQuestion() {
-    reset()
-showQuestion(randomQues[CurrentQues])
+    reset();
+showQuestion(randomQues[CurrentQues]);
 }
 
 function showQuestion (question) {
@@ -63,32 +78,33 @@ function selectAnswer(e) {
  var correct = selectedButton.dataset.correct;
  setStatusClass(document.body, correct);
  Array.from(userChoices.children).forEach(button => {
-     setStatusClass(button, button.dataset.correct)
- })
+     setStatusClass(button, button.dataset.correct);
+ });
  if(randomQues.length > CurrentQues + 1) {
     nextBtn.classList.remove("d-none");
  } else {
      start1.innerText = "restart";
      start1.classList.remove("d-none");
-
+     totalSeconds = 60;
  }
  
 }
 
 function setStatusClass(element, correct) {
-    clear(element)
+    clear(element);
     if (correct) {
         element.classList.add("correct");
-        score + 10;
     } else {
         element.classList.add("wrong");
+        totalSeconds = cSeconds - 5; //need to fix decrement to both wrong and correct
     }
 }
 
 function clear(element) {
     element.classList.remove("correct");
     element.classList.remove("wrong");
-}
+} 
+
 
 var questions = [
     {
@@ -165,5 +181,5 @@ var questions = [
         ]
     }
 
-]
+];
 
