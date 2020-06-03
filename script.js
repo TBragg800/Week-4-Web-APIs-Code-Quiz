@@ -1,7 +1,3 @@
-//variables to select start button and access questions
-// questions array/object  
-// addEventListeners on buttons
-// functions for start of quiz, next question and selecting answer
 
 var start1 = document.getElementById("start-btn");
 var nextBtn = document.getElementById("next-btn");
@@ -96,7 +92,7 @@ function setStatusClass(element, correct) {
         element.classList.add("correct");
     } else {
         element.classList.add("wrong");
-        totalSeconds = cSeconds - 5; //need to fix decrement to both wrong and correct
+        totalSeconds = cSeconds - 5;
     }
 }
 
